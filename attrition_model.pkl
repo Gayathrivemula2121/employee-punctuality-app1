@@ -1,9 +1,0 @@
-
-import pickle
-
-# 👇 replace 'model' with your actual trained model variable name
-# For example, if you used 'pipeline' or 'clf_pipeline', change it there.
-with open('attrition_model.pkl', 'wb') as file:
-    pickle.dump(model, file)
-
-print("✅ Model saved successfully as attrition_model.pkl")
