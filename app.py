@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 
 # Load the saved model
-with open('attrition_model.pkl', 'rb') as file:
+with open('attrition_model.pkl', 'wb') as file:
     model_bundle = pickle.load(file)
     model = model_bundle["model"] if isinstance(model_bundle, dict) and "model" in model_bundle else model_bundle
 
@@ -78,4 +78,5 @@ if st.button("Predict Attrition"):
     else:
 
         st.success(f"Low Risk of Attrition. Probability: {prob:.2f}")
+
 
