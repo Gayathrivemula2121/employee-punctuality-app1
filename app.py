@@ -1,29 +1,25 @@
 # Now, the Streamlit app code.
 # Save this as a separate Python file, e.g., app.py
 # Run it with: streamlit run app.py
-import streamlit as st
-import pandas as pd
-import numpy as np
-import joblib  # <--- add this import
+# <--- add this import
 
 # Load the saved model safely (replace the old pickle code)
-model_bundle = joblib.load('attrition_model.pkl')
-model = model_bundle["model"] if isinstance(model_bundle, dict) and "model" in model_bundle else model_bundle
+
 
 # Define the features (numerical_cols, categorical_cols)...
 
-#import streamlit as st
-#import pickle
-#import pandas as pd
-#import numpy as np
+import streamlit as st
+import pickle
+import pandas as pd
+import numpy as np
 
 # Load the saved model
 #with open('attrition_model.pkl', 'wb') as file:
  #   model_bundle = pickle.load(file)
  #   model = model_bundle["model"] if isinstance(model_bundle, dict) and "model" in model_bundle else model_bundle
 
-#with open('attrition_model.pkl', 'rb') as file:
-  # model = pickle.load(file)
+with open('attrition_model.pkl', 'rb') as file:
+   model = pickle.load(file)
 
 # Define the features (from the notebook)
 numerical_cols = ['JobInvolvement', 'PerformanceRating', 'EnvironmentSatisfaction', 'JobSatisfaction', 
