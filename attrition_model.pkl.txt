@@ -1,0 +1,5 @@
+import pickle
+
+# Suppose your trained model is named 'model'
+with open('attrition_model.pkl', 'wb') as file:
+    pickle.dump(model, file)
