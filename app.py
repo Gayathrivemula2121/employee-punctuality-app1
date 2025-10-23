@@ -9,7 +9,11 @@ import numpy as np
 
 # Load the saved model
 with open('attrition_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+    model_bundle = pickle.load(file)
+    model = model_bundle["model"] if isinstance(model_bundle, dict) and "model" in model_bundle else model_bundle
+
+//with open('attrition_model.pkl', 'rb') as file:
+  //  model = pickle.load(file)
 
 # Define the features (from the notebook)
 numerical_cols = ['JobInvolvement', 'PerformanceRating', 'EnvironmentSatisfaction', 'JobSatisfaction', 
@@ -72,4 +76,5 @@ if st.button("Predict Attrition"):
     if prediction[0] == 1:
         st.error(f"High Risk of Attrition! Probability: {prob:.2f}")
     else:
+
         st.success(f"Low Risk of Attrition. Probability: {prob:.2f}")
